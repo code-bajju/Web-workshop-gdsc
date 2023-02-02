@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+  <body>
+    <div ng-app="myApp">
+      <div ng-controller="myCtrl">
+        <p>{{message}}</p>
+      </div>
+    </div>
+
+    <script>
+      var app = angular.module("myApp", []);
+      app.service("messageService", function () {
+        this.getMessage = function () {
+          return "Hello from the service!";
+        };
+      });
+      app.controller("myCtrl", function ($scope, messageService) {
+        $scope.message = messageService.getMessage();
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div ng-app="myApp" ng-controller="ProfileController">
+        <img ng-src="{{ user.avatar }}" />
+        <h1>{{ user.name }}</h1>
+        <p>{{ user.email }}</p>
+        <p>{{ user.bio }}</p>
+      </div>
+<script>
+    var app = angular.module("myApp", []);
+app.controller("ProfileController", function($scope) {
+  $scope.user = {
+    name: "John Doe",
+    email: "johndoe@example.com",
+    bio: "I am a software developer with 5 years of experience.",
+    avatar: "/Profile.jpg"
+  };
+});
+
+</script>      
+</body>
+</html>
